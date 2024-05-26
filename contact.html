@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #33383C;
+            --secondary-color: #33383C;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: lavender;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 90%;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            width: 65%;
+            max-width: 1000px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 7%;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        .form-container {
+            flex: 1;
+            padding: 40px;
+        }
+        .image-container {
+            flex: 1;
+            background: url('img11.jpg') no-repeat center center/cover;
+            background-color: #ccc; /* Fallback color */
+        }
+        h1 {
+            margin-bottom: 50px;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus {
+            border-color: #33383C;
+            outline: none;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5e6062;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
+        }
+        #click {
+            display: none;
+        }
+        header {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            right: 0;
+            z-index: 1000;
+            
+            
+        }
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: block;
+                color: var(--primary-color);
+            }
+            nav {
+                position: fixed;
+                top: 3rem;
+                right: -100%;
+                flex-direction: column;
+                background-color: #ffffff;
+                width: 50%;
+                height: 100vh;
+                text-align: center;
+                transition: right 0.3s ease;
+                
+            }
+            #click:checked ~ nav {
+                right: 0;
+            }
+            nav a {
+                color: #33383C;
+                padding: 1rem 0;
+                font-size: 1rem;        
+            }
+            .container {
+                flex-direction: column;
+                width: 90%;
+                margin-top: 15%;
+            }
+            .image-container {
+                height: 200px;
+                background-size: cover;
+            }
+        }
+        button:hover {
+            background-color: #121415;
+        }
+        .social-media {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+            margin-top: 20px;
+            
+        }
+        .social-media a {
+            text-decoration: none;
+            color: #5e6062;
+            font-size: 30px;
+        }
+        .social-media a:hover {
+            color: #33383C;
+            
+        }
+        footer {
+            color: #33383C;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu -->
+    <header id="header">
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </label>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- Contact Form Section -->
+    <div class="container">
+        <div class="form-container">
+            <h1>Contact Us</h1>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=61550784844257&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/khadija-daoudi-2000" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/khadijaDI2000" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="image-container"></div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 khadija. All rights reserved.
+    </footer>
+</body>
+</html>

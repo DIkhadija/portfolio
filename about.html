@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Bootstrap Icons library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #33383C;
+            --secondary-color: #33383C;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: lavender;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .about-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%; /* Adjusted for better responsiveness */
+            text-align: center;
+            margin: 2rem 0; /* Adjusted for better spacing */
+        }
+
+        .about-section h2 {
+            font-size: 2rem; /* Adjusted */
+            margin-bottom: 1rem;
+            color: #33383C;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .about-section p {
+            font-size: 1rem; /* Adjusted */
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Navigation Styles */
+        header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+           
+            
+        }
+
+        .logo a {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #33383C;
+            text-decoration: none;
+            font-size: 0.97rem;
+            font-weight: 600;
+            padding: 0.4rem 1.3rem;
+        }
+
+        #click {
+            display: none;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        .menu {
+            display: none;
+        }
+
+        nav a {
+            position: relative;
+        }
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 2.5rem);
+            height: 3px;
+            background-color: var(--primary-color);
+            transform: scale(0, 1);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover::before {
+            transform: scale(1, 1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .menu {
+                font-size: 1.5rem;
+                color: var(--primary-color);
+            }
+
+            header {
+                padding: 0.7rem 1rem;
+                justify-content: flex-end;
+            }
+
+            nav {
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                background-color: #fff;
+                right: 0;
+                width: 70%; /* Adjusted */
+                height: 100vh;
+                top: 0;
+                transition: all 0.3s ease;
+                transform: translateX(100%); /* Hide nav initially */
+            }
+
+            nav a {
+                color: var(--primary-color);
+                padding: 1rem;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            #click:checked + .menu-icon + nav {
+                transform: translateX(0); /* Show nav when checked */
+            }
+
+            nav a::before {
+                content: none;
+            }
+        }
+        nav {
+            display: flex;
+            margin-left: auto; /* Pushes the navigation to the right */
+        }
+
+        @media screen and (max-width: 480px) {
+            .about-section {
+                padding: 1.5rem;
+                margin: 1rem 0;
+            }
+
+            .about-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-section p
+            {
+                font-size: 0.875rem;
+            }
+        }
+
+        footer {
+            padding: 1rem;
+            text-align: center;    
+            color: #33383C;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-icon"><i class="bi bi-list"></i></label>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Khadija Daoudi, a passionate Junior Software Developer based in Temara, Morocco. With a strong foundation in sales and customer service management, I transitioned into the world of software development, driven by a desire to innovate and create impactful solutions. I hold a Specialized Technician Diploma in Computer Development from the Specialized Institute of Applied Technology Temara, complemented by specialized training in data SQL/PLSQL Oracle from ENSAM Rabat. Additionally, I completed the ALX AI Career Essentials Programme, further expanding my skills in software development. Fluent in Arabic, with intermediate proficiency in French and English, I am dedicated to continuous learning and growth in the tech industry. Let's connect and explore opportunities to collaborate on exciting projects!
+        </p>
+    </section>
+    <footer>
+        &copy; 2024 Khadija. All rights reserved.
+    </footer>
+</body>
+
+</html>
